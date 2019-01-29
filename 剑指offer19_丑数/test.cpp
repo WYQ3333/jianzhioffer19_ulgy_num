@@ -13,7 +13,7 @@ public:
 		if (index == 1){
 			return true;
 		}
-		for (i = 1; i < index; ++i){
+		for (i = 2; i < index; ++i){
 			if (index%i == 0){
 				return false;
 			}
@@ -26,9 +26,9 @@ public:
 		if (index <= 6){
 			return index;
 		}
-		for (i = 7, count = 6; count < index; ++count, ++i){
-			if (i % 7 == 0 || Is_zhishu(i)){
-				continue;
+		for (i = 7; count < index; ++i){
+			if ((i % 7 != 0 )&& (!Is_zhishu(i))){
+				++count;
 			}
 		}
 		/*while (count < index){
@@ -45,7 +45,9 @@ public:
 
 void TestFunc(){
 	Solution s;
-	cout << s.GetUglyNumber_Solution(8) << endl;
+	cout << s.Is_zhishu(11) << endl;
+
+	cout << s.GetUglyNumber_Solution(7) << endl;
 }
 
 int main(){
