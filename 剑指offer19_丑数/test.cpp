@@ -21,19 +21,26 @@ public:
 		return true;
 	}
 	int GetUglyNumber_Solution(int index) {
-		int i = 1;
-		int count = 0;
+		int i = 7;
+		int count = 6;
+		if (index <= 6){
+			return index;
+		}
 		while (count < index){
 			if (i % 7 == 0 || Is_zhishu(i)){
+				++i;
 				continue;
 			}
 			++count;
+			++i;
 		}
+		return i;
 	}
 };
 
 void TestFunc(){
-
+	Solution s;
+	cout << s.GetUglyNumber_Solution(3) << endl;
 }
 
 int main(){
