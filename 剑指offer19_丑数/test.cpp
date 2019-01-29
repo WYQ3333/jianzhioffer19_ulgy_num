@@ -26,21 +26,26 @@ public:
 		if (index <= 6){
 			return index;
 		}
-		while (count < index){
+		for (i = 7, count = 6; count < index; ++count, ++i){
+			if (i % 7 == 0 || Is_zhishu(i)){
+				continue;
+			}
+		}
+		/*while (count < index){
 			if (i % 7 == 0 || Is_zhishu(i)){
 				++i;
 				continue;
 			}
 			++count;
 			++i;
-		}
+		}*/
 		return i;
 	}
 };
 
 void TestFunc(){
 	Solution s;
-	cout << s.GetUglyNumber_Solution(3) << endl;
+	cout << s.GetUglyNumber_Solution(8) << endl;
 }
 
 int main(){
